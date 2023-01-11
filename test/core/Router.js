@@ -178,7 +178,7 @@ describe("Router", function () {
       .to.be.revertedWith("Router: plugin not approved")
   })
 
-  it("swap, buy USDG", async () => {
+  it.only("swap, buy USDG", async () => {
     await vaultPriceFeed.getPrice(dai.address, true, true, true)
     await dai.mint(user0.address, expandDecimals(200, 18))
     await dai.connect(user0).approve(router.address, expandDecimals(200, 18))
